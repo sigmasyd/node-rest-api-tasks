@@ -3,8 +3,9 @@ import Task from '../models/Task'
 
 const router = Router()
 
-router.get('/', (req, res) => {
-  res.send('Tasks')
+router.get('/', async (req, res) => {
+  const tasks = await Task.find()
+  res.json(tasks)
 })
 
 router.post('/', async (req, res) => {
