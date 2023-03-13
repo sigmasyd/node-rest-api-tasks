@@ -6,6 +6,6 @@ POST http://localhost:3000/api/tasks
 Content-Type: application/json
 
 {
-  "title": "Definir tecnología",
-  "description": "Analizar las tecnologias requeridas para el proyecto"
+  "title": "Preparar el ambiente",
+  "description": "Instalar/configurar las tecnologias que van a utilizarse en el ambiente local/pruebas"
 }
