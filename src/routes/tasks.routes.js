@@ -3,9 +3,11 @@ import * as taskCtrl from '../controllers/task.controller'
 
 const router = Router()
 
+router.post('/', taskCtrl.createTask)
+
 router.get('/', taskCtrl.findAllTasks)
 
-router.post('/', taskCtrl.createTask)
+router.get('/:id', taskCtrl.findOneTask)
 
 router.put('/:id', taskCtrl.updateTask)
 

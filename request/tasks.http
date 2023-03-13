@@ -9,3 +9,6 @@ Content-Type: application/json
   "title": "Preparar el ambiente",
   "description": "Instalar/configurar las tecnologias que van a utilizarse en el ambiente local/pruebas"
 }
+
+###
+GET http://localhost:3000/api/tasks/640f83864a6839130b45692b
