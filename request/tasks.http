@@ -6,9 +6,24 @@ POST http://localhost:3000/api/tasks
 Content-Type: application/json
 
 {
-  "title": "Preparar el ambiente",
-  "description": "Instalar/configurar las tecnologias que van a utilizarse en el ambiente local/pruebas"
+  "title": "Definiendo listado de tareas",
+  "description": "Analizar los pasos a seguir para implementar el proyecto",
+  "done": true
 }
 
 ###
-GET http://localhost:3000/api/tasks/640f83864a6839130b45692b
+GET http://localhost:3000/api/tasks/640f83864a6839130b45692a
+
+###
+GET http://localhost:3000/api/tasks/done
+
+###
+DELETE http://localhost:3000/api/tasks/640f83864a6839130b45692a
+
+###
+PUT http://localhost:3000/api/tasks/640e178f98c9ab5aedd7ac60
+Content-Type: application/json
+
+{
+  "done": true
+}

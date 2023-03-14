@@ -7,6 +7,8 @@ router.post('/', taskCtrl.createTask)
 
 router.get('/', taskCtrl.findAllTasks)
 
+router.get('/done', taskCtrl.findAllDoneTask)
+
 router.get('/:id', taskCtrl.findOneTask)
 
 router.put('/:id', taskCtrl.updateTask)
