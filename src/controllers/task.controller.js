@@ -38,13 +38,26 @@ export const findAllDoneTask = async (req, res) => {
 }
 
 export const findOneTask = async (req, res) => {
-  const id = req.params.id
-  const task = await Task.findById(id)
-  res.json(task)
+  const { id } = req.params
+  try {
+    const task = await Task.findById(id)
+
+    if (!task) {
+      return res.status(400).json({
+        message: `Task con id ${id} does not exist`
+      })
+    }
+
+    res.json(task)
+  } catch (error) {
+    res.status(500).json({
+      message: error.message || `Something goes wrong retrieving the task with id ${id}`
+    })
+  }
 }
 
 export const updateTask = async (req, res) => {
-  const id = req.params.id  
+  const { id } = req.params
   await Task.findByIdAndUpdate(id, req.body)
   res.json({
     message: `Task was updated successfully`
@@ -52,9 +65,15 @@ export const updateTask = async (req, res) => {
 }
 
 export const deleteTask = async (req, res) => {
-  const id = req.params.id
-  await Task.findByIdAndDelete(id)
-  res.json({
-    message: `${id} Task were deleted successfully`
-  })
+  const { id } = req.params
+  try {
+    await Task.findByIdAndDelete(id)
+    res.json({
+      message: `${id} Task were deleted successfully`
+    })    
+  } catch (error) {
+    res.status(500).json({
+      message: error.message || `Cannot delete task with id ${id}`
+    })
+  }
 }
