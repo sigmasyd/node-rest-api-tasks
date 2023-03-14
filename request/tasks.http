@@ -6,8 +6,8 @@ POST http://localhost:3000/api/tasks
 Content-Type: application/json
 
 {
-  "title": "Definiendo listado de tareas",
-  "description": "Analizar los pasos a seguir para implementar el proyecto",
+  "title": "Base de datos",
+  "description": "Creando base de datos con sus relaciones",
   "done": true
 }
 
